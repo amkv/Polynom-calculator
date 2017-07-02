@@ -24,7 +24,7 @@ def generatePolynom(termRangeFrom=1, termRangeTo=10, numberRange=100):
     while i < countOfTerms:
         coefficient = random.randrange(2, numberRange)
         exponent = random.randrange(2, numberRange)
-        constant = exponent
+        constant = exponent - 1
         typeOfTerm = random.randrange(0, 3)
         sign = random.choice('-+')
         if typeOfTerm == 0: # 3x^2
