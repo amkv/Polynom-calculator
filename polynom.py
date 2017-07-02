@@ -193,7 +193,7 @@ def showResult(polynom_1, polynom_2):
     debug('\n[Result] %2f' % ((time.time() - timeStart)) + ' seconds')
 
 def getTerms(polynom, generator=False):
-    """Create table from polynom (string)"""
+    """Create dictionary from polynom (string) or from generator"""
     timeStart = time.time()
     termTable = {}
 
@@ -246,14 +246,18 @@ def showDocs():
     print cleanTerm.__doc__
     print generatePolynom.__doc__
     print recreateTerm.__doc__
+    print debug.__doc__
+    print setDebug.__doc__
+    print setBigMode.__doc__
     print '--------------------------------------\n'
 
 def debug(text):
-    """Debug function"""
+    """Debug function. Print if debug mode enabled"""
     if DEBUG:
         print text
 
 def setDebug():
+    """Set debug mode. enabled/disabled"""
     global DEBUG
     if DEBUG:
         DEBUG = False
@@ -261,6 +265,7 @@ def setDebug():
         DEBUG = True
 
 def setBigMode():
+    """Set BIG mode. enabled/disabled"""
     global BIG
     global DEBUG
     if BIG:
@@ -289,7 +294,7 @@ def showUsage():
     print "enter command or polynom (tap <ENTER> for generate polynom):"
 
 def main():
-    """Main method"""
+    """Main method. Console menu"""
     os.system('clear')
     showUsage()
     terms = []
